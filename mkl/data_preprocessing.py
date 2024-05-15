@@ -110,18 +110,8 @@ def load_and_process():
         X_noisy = X + noise
         return X_noisy
 
-    # Example usage
-    # Assuming X is your input data and Y is the corresponding labels
-    X = add_noise(X)
-    # Example usage
-    # Assuming X is your gene expression data
-    X_augmented = gene_dropout(X)
-    X_augmented = random_shifts(X_augmented)
+   
     X_augmented = scale_data(X_augmented)
-
-    X_augmented = gene_set_perturbation(X_augmented, gene_sets=[[0, 1, 2], [3, 4, 5]])
-    X_augmented, Y = generate_synthetic_data(X_augmented, Y)
-    X = drop_features(X_augmented)
     X = normalization(X)
 
     save_X_and_Y(X, Y)
