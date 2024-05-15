@@ -119,16 +119,16 @@ def main():
     results.append(("MKL", train_accuracy, test_accuracy))
 
 
-    # similarity_table = kernel_similarity_table(KLtr)
-    #
-    # table_headers = [''] + [f'Kernel {i + 1}' for i in range(len(KLtr))]
-    #
-    # table_rows = [[f'Kernel {i + 1}'] + list(similarity_table[i]) for i in range(len(KLtr))]
-    #
-    # similarity_table_formatted = tabulate(table_rows, headers=table_headers, tablefmt="grid")
-    #
-    # print("Similarity Table:")
-    # print(similarity_table_formatted)
+    similarity_table = kernel_similarity_table(KLtr)
+    
+    table_headers = [''] + [f'Kernel {i + 1}' for i in range(len(KLtr))]
+    
+    table_rows = [[f'Kernel {i + 1}'] + list(similarity_table[i]) for i in range(len(KLtr))]
+    
+    similarity_table_formatted = tabulate(table_rows, headers=table_headers, tablefmt="grid")
+    
+    print("Similarity Table:")
+    print(similarity_table_formatted)
 
     print("\nResults Table:")
     print(tabulate(results, headers=["Model", "Train Accuracy", "Test Accuracy"]), "\n")
