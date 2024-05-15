@@ -10,6 +10,8 @@ import numpy as np
 from tabulate import tabulate
 from mkl.model import Model
 from mkl.util import process
+from MKLpy.algorithms import MEMO
+
 
 
 def linear_kernel(X, Z=None, normalize=False):
@@ -32,8 +34,8 @@ def compute_kernels(Xtr, Xte, Ytr):
 def structured_sparsity(KLtr, KLte, Yte, Ytr):
     print("REGULARIZED")
 
-    base_learner = SVC(C=0.5)
-    # clf = MEMO(base_learner)
+    clf = MEMO(learner = base_learner)
+    # clf = Model()
     clf = Model()
     clf = clf.fit(KLtr, Ytr)
 
