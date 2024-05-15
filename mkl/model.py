@@ -19,6 +19,7 @@ from mkl.util import summation
 
 class Solution():
 	def __init__(self, weights, objective, ker_matrix, dual_coef, bias, **kwargs):
+		self.Y = None
 		self.weights 	= weights
 		self.objective 	= objective
 		self.ker_matrix = ker_matrix
