@@ -36,7 +36,6 @@ def structured_sparsity(KLtr, KLte, Yte, Ytr):
 
     clf = MEMO(learner = base_learner)
     # clf = Model()
-    clf = Model()
     clf = clf.fit(KLtr, Ytr)
 
     y_pred = clf.predict(KLtr)
